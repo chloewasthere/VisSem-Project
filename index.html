@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url(heart-attack-7224476_1280.jpg);
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h2 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wahre Männer retten Frauenherzen - Du auch?</span></h2>
+    <p>Diese Botschaft auf einem Bieretikett mag auf den ersten Blick ungewöhnlich wirken. Doch genau das ist der Punkt:</p>
+    <p>Wir wollen Deine Aufmerksamkeit auf ein Thema lenken, das oft unterschätzt wird – die Unterschiede der Herzinfarktsymptome bei Männern und Frauen.</p>
+  </div>
+  <div class="w3-content" style="max-width:700px">
+    <h6 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Das Problem?</span></h6>
+    <p>Die medizinische Forschung und auch die öffentliche Wahrnehmung orientieren sich noch immer hauptsächlich an den Symptomen, die bei Männern auftreten. Frauenherzen bleiben häufig unbeachtet – mit lebensbedrohlichen Folgen.</p>
+    <h6 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Warum betrifft Dich das?</span></h6>
+    <p>Ein Herzinfarkt kann uns alle treffen – Männer, Frauen und auch Menschen, die sich außerhalb der binären Geschlechterordnung bewegen. Doch die Frage ist: Erkennst Du die Anzeichen rechtzeitig, um dir selbst oder jemand anderem zu helfen?</p>
+  </div>
+</div>
+
+<div class="w3-light-grey w3-content w3-center">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRUXGA_9jSYD0Z7zvyp7IbgNteOGKt5FM0cYIo3v8WlfXSew/viewform?embedded=true" width="640" height="921" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+  </div>
+
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Woher kommen die Unterschiede?</span></h5>
+  
+    <div class="w3-large w3-content w3-center">
+      <iframe src="red_vid_1736498190.mp4" frameborder="0" allowfullscreen>
+      </iframe> 
+    </div>
+
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Biologie');" id="myLink">
+        <div class="w3-col s6 tablink">Biologische Unterschiede</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'GenderHealth');">
+        <div class="w3-col s6 tablink">Gender Health Gap</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Gesellschaft');">
+        <div class="w3-col s6 tablink">Gesellschaftliche Faktoren</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Lobby');">
+        <div class="w3-col s6 tablink">Fehlende Lobby in der Politik</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'PinkTaxes');">
+        <div class="w3-col s6 tablink">Pink Taxes und wirtschaftliche Ungleichheit</div>
+      </a>
+    </div>
+
+    <div id="Biologie" class="w3-container menu w3-padding-48 w3-card">
+      <p>Die Unterschiede in der Symptomatik lassen sich zum Teil auf biologische Faktoren zurückführen:</p>
+      <h5>Hormonelle Unterschiede:</h5>
+      <p class="w3-text-grey">Östrogen, ein primäres Hormon bei Frauen, hat in jüngeren Jahren eine schützende Wirkung auf das Herz. Nach der Menopause sinkt der Östrogenspiegel, was das Risiko für Herz-Kreislauf-Erkrankungen erhöht. Gleichzeitig ändert sich die Art und Weise, wie Symptome wahrgenommen und verarbeitet werden.</p>
+      <h5>Gefäßstruktur:</h5>
+      <p class="w3-text-grey">Frauen haben oft kleinere Herzkranzgefäße als Männer. Dies kann dazu führen, dass sich
+        Verstopfungen anders äußern, z. B. durch diffuse Schmerzen oder Druckgefühle, anstatt
+        durch starke, lokalisierte Brustschmerzen.</p>
+      <h5>Mikrovaskuläre Dysfunktion:</h5>
+      <p class="w3-text-grey">Frauen leiden häufiger an Störungen der kleinen Blutgefäße (Mikrozirkulation). Dies äußert
+        sich oft in Symptomen, die weniger offensichtlich sind, wie Rückenschmerzen oder extreme
+        Müdigkeit.</p>
+    </div>
+
+    <div id="GenderHealth" class="w3-container menu w3-padding-48 w3-card">
+      <p>Das Gesundheitssystem ist in vielen Bereichen auf Männer als „Standardpatienten“ ausgerichtet.
+        Dies hat direkte Auswirkungen auf die Erkennung und Behandlung von Herzinfarkten bei Frauen:</p>
+      <h5>Medizinische Studien:</h5>
+      <p class="w3-text-grey">Viele klinische Studien, die zur Entwicklung von Medikamenten und Behandlungsansätzen
+        führen, werden überwiegend mit männlichen Probanden durchgeführt. Frauen werden oft
+        nicht ausreichend berücksichtigt, was dazu führt, dass ihre spezifischen Symptome und
+        Bedürfnisse übersehen werden.</p>
+      <p class="w3-text-grey"><i>Beispiel:</i> Ein großer Teil der Herzmedikamente wurde
+        basierend auf Studien mit männlichen Teilnehmern entwickelt, wodurch Frauen weniger
+        optimal behandelt werden.</p>
+      <h5>Diagnostische Vorurteile:</h5>
+      <p class="w3-text-grey">Ärzt*innen sind oft auf die klassischen Herzinfarktsymptome (Brustschmerzen, Atemnot)
+        geschult, die bei Männern häufiger auftreten. Die subtileren Symptome bei Frauen werden
+        seltener als Herzinfarkt erkannt.</p>
+      <p class="w3-text-grey"><i>Beispiel:</i> Eine Frau mit Übelkeit und Rückenschmerzen
+        wird oft auf Stress oder Verdauungsprobleme hin behandelt, obwohl sie einen Herzinfarkt
+        erleidet.</p>
+    </div>
+
+    <div id="Gesellschaft" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Vorurteile und Klischees:</h5>
+      <p class="w3-text-grey">Herzinfarkte werden in der öffentlichen Wahrnehmung oft als „Männerkrankheit“
+        dargestellt. Dies führt dazu, dass Frauen ihre eigenen Symptome weniger ernst nehmen und
+        später medizinische Hilfe suchen.</p>
+      <p class="w3-text-grey"><i>Beispiel:</i> Eine Umfrage der Deutschen Herzstiftung ergab,
+        dass viele Frauen ihre Symptome erst als ernsthaft einstufen, wenn sie unerträglich werden.</p>
+
+      <h5>Stress und Mehrfachbelastung:</h5>
+      <p class="w3-text-grey">Frauen sind oft stärker von Stress und Mehrfachbelastung betroffen (z. B. durch die
+        Doppelbelastung von Beruf und Familie). Stress kann bei Frauen Herzinfarktsymptome wie
+        Müdigkeit und Übelkeit verstärken, was die Diagnose zusätzlich erschwert.</p>
+    
+      <h5>Gender Pay Gap</h5>
+      <p class="w3-text-grey"><strong>TO DO: </strong>Beispiel</p><br>
+    
+      <h5>Transgender und Gender Health Gap</h5>
+      <p class="w3-text-grey"><strong>TO DO: </strong>Beispiel</p>
+    </div> 
+    
+    <div id="Lobby" class="w3-container menu w3-padding-48 w3-card">
+      <p>Frauenherzen haben in der Politik und im öffentlichen Bewusstsein oft keine starke Lobby:</p>
+      <h5>Fokus auf männliche Erkrankungen:</h5>
+      <p class="w3-text-grey"> Gesundheitskampagnen und Forschung konzentrieren sich oft stärker auf Erkrankungen, die
+        Männer betreffen. Die spezifischen Bedürfnisse von Frauen, wie die Erkennung subtiler
+        Symptome, bleiben dabei häufig auf der Strecke.</p>
+      <h5>Ungleiche Verteilung von Forschungsgeldern:</h5>
+      <p class="w3-text-grey"> Studien zeigen, dass geschlechterspezifische Forschung (z. B. zu den Unterschieden bei
+        Herz-Kreislauf-Erkrankungen) unterfinanziert ist.</p>
+    </div>
+
+    <div id="PinkTaxes" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Pink Taxes:</h5>
+      <p class="w3-text-grey"> Frauenprodukte (wie Hygieneartikel oder Pflegeprodukte) sind oft teurer, was indirekt ihre
+        finanzielle Belastung erhöht. Dies kann Auswirkungen auf die Gesundheitsvorsorge
+        haben.</p>
+      <p class="w3-text-grey"><i>Beispiel:</i> Frauen verzichten häufiger auf Vorsorgeuntersuchungen oder medizinische
+        Behandlungen, wenn sie finanziell belastet sind.</p>
+      <h5>Einkommensunterschiede:</h5>
+      <p class="w3-text-grey"> Da Frauen im Durchschnitt weniger verdienen als Männer, kann es ihnen schwerer fallen,
+        teure medizinische Behandlungen oder Vorsorgeuntersuchungen in Anspruch zu nehmen.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wieso ist die Diskussion auch für Dich wichtig?</span></h5>
+    <p>Es sind nicht nur Frauen benachteiligt, sondern auch Männer:</p>
+    <div class="w3-center">
+    <iframe src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1" 
+      width="560" 
+      height="315" 
+      title="Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK" 
+      frameborder="0" 
+      allowfullscreen>
+    </iframe>
+  </div>
+    <div class="w3-panel w3-leftbar w3-light-grey"></div>
+      <p><i>Männer sind benachteiligt, wenn es um die Diagnose und Therapie von Krankheiten geht, die eher als frauentypische Erkrankgungen angesehen. Dies betrifft beispielsweise Depressionen, Osteoporose oder Brustkrebs.</i></p>
+      <p>Prof.Dr.med. Sandra Eifert (Herzzentrum Leipzig)</p>
+    </div>
+
+<div class="w3-container w3-white">
+  <div class="w3-content" style="max-width:700px">
+  <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Erweiterte Perspektive: Beyond Binary</span></h5>
+  <p><strong>Das Gesundheitssystem muss inklusiver werden!</strong></p>
+  <p>Die binäre Geschlechterperspektive greift zu kurz. Eine wirklich inklusive Gesundheitsversorgung
+    muss die Vielfalt der Geschlechter berücksichtigen und trans sowie nicht-binäre Menschen
+    einbeziehen:</p>
+    <ul>
+      <li><strong>Geschlechterinklusive Forschung:</strong> Studien müssen spezifische Daten über die
+        gesundheitlichen Bedürfnisse aller Geschlechter liefern.</li>
+      <li><strong>Sensibilisierung in der medizinischen Ausbildung:</strong> Ärzt*innen und Pflegepersonal
+        müssen geschult werden, um trans und nicht-binäre Menschen kompetent und respektvoll zu
+        behandeln.</li>
+      <li><strong>Anpassung der Diagnostik:</strong>Medizinische Geräte und Diagnosen müssen
+        geschlechtsneutral gestaltet werden, um allen Patient*innen gerecht zu werden.</li>
+    </ul>
+    <p><strong>Intersektionale Perspektive:</strong></p>
+    <p>Es ist wichtig, über Geschlechtervielfalt hinaus auch andere Faktoren zu berücksichtigen, die die
+      medizinische Versorgung beeinflussen, wie Rassismus, sozioökonomische Ungleichheit oder
+      Sprachbarrieren. Menschen, die mehreren marginalisierten Gruppen angehören – z. B. trans
+      Personen aus ethnischen Minderheiten – erleben oft noch stärkere Benachteiligung im
+      Gesundheitssystem.</p>
+  </div>
+</div>
+      
+    <div class="w3-panel w3-leftbar w3-red">
+      <p>Herzgesundheit ist ein Menschenrecht. Gemeinsam können wir dafür sorgen, dass niemand
+        zurückgelassen wird – unabhängig davon, ob sie Mann, Frau, trans, nicht-binär oder divers
+        sind. Denn echte Gleichheit beginnt damit, dass wir die Unterschiede erkennen und handeln.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-dark-grey w3-grayscale w3-large">
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:700px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Weitere Informationen</span></h5>
+      <p><strong>To Do: </strong>Quellen einfügen</p>
+  </div>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Erarbeitet im Seminar <i>"Dir zeig ich's!" - Datenvisualisierung in Zeiten der Polarisierung</i> an der Otto-Friedrich-Universität Bamberg, Wintersemester 2024/25</p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
