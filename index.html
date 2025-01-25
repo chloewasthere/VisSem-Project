@@ -22,6 +22,30 @@ body, html {
 .menu {
   display: none;
 }
+
+    .video-player {
+      display: block;
+      width: 100%;
+      height: 20em;
+      object-fit: contain;
+      background: black;
+    }
+
+.responsive-iframe {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 25px;
+    height: 0;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 </style>
 </head>
 <body>
@@ -49,7 +73,8 @@ body, html {
 </div>
 
 <div class="w3-light-grey w3-content w3-center">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRUXGA_9jSYD0Z7zvyp7IbgNteOGKt5FM0cYIo3v8WlfXSew/viewform?embedded=true" width="640" height="921" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdRUXGA_9jSYD0Z7zvyp7IbgNteOGKt5FM0cYIo3v8WlfXSew/viewform?embedded=true"
+          width="640" height="921" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
   </div>
 
 
@@ -58,27 +83,25 @@ body, html {
   <div class="w3-content" style="max-width:700px">
  
     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Woher kommen die Unterschiede?</span></h5>
-  
-    <div class="w3-large w3-content w3-center">
-      <iframe src="red_vid_1736498190.mp4" frameborder="0" allowfullscreen>
-      </iframe> 
-    </div>
 
-    <div class="w3-row w3-center w3-card w3-padding">
-      <a href="javascript:void(0)" onclick="openMenu(event, 'Biologie');" id="myLink">
-        <div class="w3-col s6 tablink">Biologische Unterschiede</div>
+    <video src="red_vid_1736498190.mp4" class="video-player" controls />
+
+
+    <div class="w3-col w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Biologie');">
+        <div class="w3-row s6 tablink">Biologische Unterschiede</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'GenderHealth');">
-        <div class="w3-col s6 tablink">Gender Health Gap</div>
+        <div class="w3-row s6 tablink">Gender Health Gap</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Gesellschaft');">
-        <div class="w3-col s6 tablink">Gesellschaftliche Faktoren</div>
+        <div class="w3-row s6 tablink">Gesellschaftliche Faktoren</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'Lobby');">
-        <div class="w3-col s6 tablink">Fehlende Lobby in der Politik</div>
+        <div class="w3-row s6 tablink">Fehlende Lobby in der Politik</div>
       </a>
       <a href="javascript:void(0)" onclick="openMenu(event, 'PinkTaxes');">
-        <div class="w3-col s6 tablink">Pink Taxes und wirtschaftliche Ungleichheit</div>
+        <div class="w3-row s6 tablink">Pink Taxes und wirtschaftliche Ungleichheit</div>
       </a>
     </div>
 
@@ -165,15 +188,15 @@ body, html {
   <div class="w3-content" style="max-width:700px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wieso ist die Diskussion auch für Dich wichtig?</span></h5>
     <p>Es sind nicht nur Frauen benachteiligt, sondern auch Männer:</p>
-    <div class="w3-center">
-    <iframe src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1" 
-      width="560" 
-      height="315" 
-      title="Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK" 
-      frameborder="0" 
-      allowfullscreen>
-    </iframe>
-  </div>
+    <div class="responsive-iframe">
+      <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1"
+              title="Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK"
+              frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
     <div class="w3-panel w3-leftbar w3-light-grey"></div>
       <p><i>Männer sind benachteiligt, wenn es um die Diagnose und Therapie von Krankheiten geht, die eher als frauentypische Erkrankgungen angesehen. Dies betrifft beispielsweise Depressionen, Osteoporose oder Brustkrebs.</i></p>
       <p>Prof.Dr.med. Sandra Eifert (Herzzentrum Leipzig)</p>
@@ -203,12 +226,14 @@ body, html {
       Gesundheitssystem.</p>
   </div>
 </div>
-      
+
+  <div class="w3-content" style="max-width:700px">
     <div class="w3-panel w3-leftbar w3-red">
       <p>Herzgesundheit ist ein Menschenrecht. Gemeinsam können wir dafür sorgen, dass niemand
-        zurückgelassen wird – unabhängig davon, ob sie Mann, Frau, trans, nicht-binär oder divers
+        zurückgelassen wird – unabhängig davon, ob Sie Mann, Frau, trans, nicht-binär oder divers
         sind. Denn echte Gleichheit beginnt damit, dass wir die Unterschiede erkennen und handeln.</p>
     </div>
+  </div>
   </div>
 </div>
 
