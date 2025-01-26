@@ -21,9 +21,24 @@
     min-height: 75%;
   }
 
+  .video-player {
+      display: block;
+      width: 100%;
+      height: 20em;
+      object-fit: contain;
+      background: black;
+   }
+
   .menu {
     display: none;
   }
+
+  .responsive-iframe {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-top: 25px;
+      height: 0;
+    }
   </style>
 </head>
 
@@ -54,21 +69,22 @@
     <div class="w3-light-grey w3-content w3-center">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSdRUXGA_9jSYD0Z7zvyp7IbgNteOGKt5FM0cYIo3v8WlfXSew/viewform?embedded=true"
-        width="640" height="921" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+        width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…
+      </iframe>
     </div>
 
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Woher kommen die Unterschiede?</span></h5>
+        <video class="video-player" controls>
+          <source src="red_vid_1736498190.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
 
     <!-- Menu Container -->
     <div class="w3-container" id="menu1">
       <div class="w3-content" style="max-width:700px">
-
-      <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Woher kommen die Unterschiede?</span></h5>
-
-      <div class="w3-large w3-content w3-center">
-        <iframe
-          src="red_vid_1736498190.mp4" frameborder="0" allowfullscreen>
-        </iframe>
-      </div>
 
         <div class="w3-row w3-center w3-card w3-padding">
           <a href="javascript:void(0)" onclick="openMenu(event, 'Biologie');" id="myLink">
@@ -171,10 +187,11 @@
       <div class="w3-content" style="max-width:700px">
         <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wieso ist die Diskussion auch für Dich wichtig?</span></h5>
         <p>Es sind nicht nur Frauen benachteiligt, sondern auch Männer:</p>
-        <div class="w3-center">
-          <iframe src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1"
+        <div class="responsive-iframe">
+          <iframe
             width="560"
             height="315"
+            src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1"
             title="Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK"
             frameborder="0"
             allowfullscreen>
@@ -210,10 +227,12 @@
         </div>
       </div>
 
-      <div class="w3-panel w3-leftbar w3-red">
-        <p>Herzgesundheit ist ein Menschenrecht. Gemeinsam können wir dafür sorgen, dass niemand
-          zurückgelassen wird – unabhängig davon, ob Sie Mann, Frau, trans, nicht-binär oder divers
-          sind. Denn echte Gleichheit beginnt damit, dass wir die Unterschiede erkennen und handeln.</p>
+      <div class="w3-content" style="max-width:700px">
+        <div class="w3-panel w3-leftbar w3-red">
+          <p>Herzgesundheit ist ein Menschenrecht. Gemeinsam können wir dafür sorgen, dass niemand
+            zurückgelassen wird – unabhängig davon, ob Sie Mann, Frau, trans, nicht-binär oder divers
+            sind. Denn echte Gleichheit beginnt damit, dass wir die Unterschiede erkennen und handeln.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -229,7 +248,7 @@
   </div>
 
   <!-- End page content -->
-  </div>
+
 
   <!-- Footer -->
   <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
