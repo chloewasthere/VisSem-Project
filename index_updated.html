@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VisSem_Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+  <style>
+  
+  body,html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+
+  .centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+  }
+
+  .bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url(heart-attack-7224476_1280.jpg);
+    min-height: 75%;
+  }
+
+  .img {
+  object-fit: contain;
+  } 
+    
+    /* Beer glass container (fixed position at bottom left) */
+    .beer-container {
+      position: fixed;
+      bottom: 5vh; /* 5% of viewport height from bottom */
+      left: 5vw; /* 5% of viewport width from left */
+      width: 100px; /* Fixed width for glass */
+      height: 200px; /* Fixed height for glass */
+      border-radius: 20px 20px 5px 5%; /* Rounded top for the glass */
+      border: 2px solid rgba(139, 126, 102, 0.7); /* Glass border with transparency */
+      overflow: hidden; /* Keeps liquid inside the glass */
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 9999; /* Always visible */
+      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2), /* Inner shadow for depth */
+                  0 8px 15px rgba(0, 0, 0, 0.3); /* Outer shadow for glass effect */
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)); /* Glass reflection */
+    }
+
+    /* Beer liquid */
+    .beer-liquid {
+      width: 85%; /* Slightly narrower than the glass */
+      height: 100%; /* Initially full */
+      background: linear-gradient(to top, #f2b600, #d89e00); /* Gradient for beer effect */
+      border-radius: 0 0 15px 15px; /* Rounded bottom for liquid */
+      position: absolute;
+      bottom: 0;
+      transition: height 0.2s ease; /* Smooth emptying animation */
+    }
+
+    /* Foam (top of the beer) */
+    .beer-foam {
+      width: 85%; /* Same width as liquid */
+      height: 15%; /* Height of the foam */
+      background: #fff; /* White foam */
+      border-radius: 10px 10px 0 0; /* Rounded top of the foam */
+      position: absolute;
+      top: 0; /* Foam starts at the top of the liquid */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Foam shadow */
+      transition: height 0.2s ease, opacity 0.2s ease; /* Fade out foam smoothly */
+    }
+
+    .scrollbar-indicator {
+      width: 100%;
+      height: 2%;
+      position: fixed;
+      z-index: 1;
+    }
+
+    .scrollbar {
+      height: 100%;
+      background-color: rgb(91, 3, 41);
+      width: 0%;
+      z-index: 2;
+    }
+
+
+  .video-player {
+      display: block;
+      width: 100%;
+      height: 20em;
+      object-fit: contain;
+      background: black;
+   }
+
+  .menu {
+    display: none;
+  }
+
+  .responsive-iframe {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-top: 25px;
+      height: 0;
+      weight: 100%;
+    }
+    .responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+
+<body>
+  <!--<div class="pb"></div>-->
+  <div class="scrollbar-indicator">
+    <div class="scrollbar">
+    </div>
+  </div>
+  
+  <!-- Header with image -->
+  <header class="bgimg w3-center">
+    <div class="w3-container">
+      <div class="w3-content centered" style="max-width:700px">
+        <h2 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wahre Männer retten Frauenherzen - Du auch?</span></h2>
+      </div>
+    </div>
+  </header>
+
+  <!-- Bierglass -->
+  <div class="beer-container">
+    <div class="beer-foam"></div>
+    <div class="beer-liquid"></div>
+  </div>
+
+  <div class="w3-grayscale w3-sand w3-large">
+    <!-- Quiz -->
+    <div class="w3-light-grey w3-content w3-center">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdRUXGA_9jSYD0Z7zvyp7IbgNteOGKt5FM0cYIo3v8WlfXSew/viewform?embedded=true"
+        width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…
+      </iframe>
+    </div>
+
+    
+    <!-- Erster Text -->
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h6 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Das Problem?</span></h6>
+        <p>Die medizinische Forschung und auch die öffentliche Wahrnehmung orientieren sich noch immer hauptsächlich an den Symptomen, die bei Männern auftreten. Frauenherzen bleiben häufig unbeachtet – mit lebensbedrohlichen Folgen.</p>
+        <h6 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Warum betrifft Dich das?</span></h6>
+        <p>Ein Herzinfarkt kann uns alle treffen – Männer, Frauen und auch Menschen, die sich außerhalb der binären Geschlechterordnung bewegen. Doch die Frage ist: Erkennst Du die Anzeichen rechtzeitig, um dir selbst oder jemand anderem zu helfen?</p>
+      </div>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Woher kommen die Unterschiede?</span></h5>
+        <video class="video-player" controls>
+          <source src="red_vid_1736498190.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br>
+  </div>
+
+    <!-- Menu Container -->
+    <div class="w3-container" id="menu1">
+      <div class="w3-content" style="max-width:700px">
+
+        <div class="w3-col w3-center w3-card w3-padding">
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Biologie');">
+            <div class="w3-row s6 tablink"><strong>Biologische Unterschiede</strong></div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'GenderHealth');">
+            <div class="w3-row s6 tablink"><strong>Gender Health Gap</strong></div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Gesellschaft');">
+            <div class="w3-row s6 tablink"><strong>Gesellschaftliche Faktoren</strong></div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Lobby');">
+            <div class="w3-row s6 tablink">Fehlende Lobby in der Politik</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'PinkTaxes');">
+            <div class="w3-row s6 tablink">Pink Taxes und wirtschaftliche Ungleichheit</div>
+          </a>
+          <a href="javascript:void(0)" onclick="openMenu(event, 'Data');">
+            <div class="w3-row s6 tablink"><strong>Gender Data Gap</strong></div>
+          </a>
+        </div>
+
+        <div id="Biologie" class="w3-container menu w3-padding-48 w3-card">
+          <p>Die Unterschiede in der Symptomatik lassen sich zum Teil auf biologische Faktoren zurückführen:</p>
+          <h5>Hormonelle Unterschiede:</h5>
+          <p class="w3-text-grey">Östrogen, ein primäres Hormon bei Frauen, hat in jüngeren Jahren eine schützende Wirkung auf das Herz. Nach der Menopause sinkt der Östrogenspiegel, was das Risiko für Herz-Kreislauf-Erkrankungen erhöht. Gleichzeitig ändert sich die Art und Weise, wie Symptome wahrgenommen und verarbeitet werden.</p>
+          <h5>Gefäßstruktur:</h5>
+          <p class="w3-text-grey">Frauen haben oft kleinere Herzkranzgefäße als Männer. Dies kann dazu führen, dass sich
+            Verstopfungen anders äußern, z. B. durch diffuse Schmerzen oder Druckgefühle, anstatt
+            durch starke, lokalisierte Brustschmerzen.</p>
+          <h5>Mikrovaskuläre Dysfunktion:</h5>
+          <p class="w3-text-grey">Frauen leiden häufiger an Störungen der kleinen Blutgefäße (Mikrozirkulation). Dies äußert
+            sich oft in Symptomen, die weniger offensichtlich sind, wie Rückenschmerzen oder extreme
+            Müdigkeit.</p>
+          <p>Frauen sind häufig mit Erkrankungen konfrontiert, die zwar nicht tödlich sind, aber zu Behinderungen führen und ihre Lebensqualität beeinträchtigen können. </p>
+          <img src="svgz-mhiwomenhealth-ex-9-A.svg" class="">
+          <p class="w3-text-grey">Einige Krankheiten, wie Darm- oder Leberkrebs, betreffen Männer und Frauen unterschiedlich, und im Durchschnitt ist die Wahrscheinlichkeit, dass Frauen eine schwerere oder schwerere Form dieser Krankheiten entwickeln, größer.</p>
+          <p class="w3-text-grey">Bestimmte Krankheiten wie Alzheimer und andere Demenzerkrankungen betreffen Frauen überproportional häufig. Einem Bericht aus dem Jahr 2019 zufolge übersteigt die Zahl der an Demenz erkrankten Frauen die Zahl der an Demenz erkrankten Männer weltweit um 100 zu 69.</p>
+          <p class="w3-text-grey">Bestimmte frauenspezifische Erkrankungen wie Eierstockkrebs verursachen weniger Behinderungen, weil die Sterblichkeitsrate höher ist. Eierstockkrebs ist die tödlichste gynäkologische Krebsart mit einer relativen Fünf-Jahres-Überlebensrate von 17 Prozent für eine Patientin, die in einem fortgeschrittenen Stadium diagnostiziert wird.</p>
+          <p class="w3-text-grey">Bestimmte Erkrankungen bei Männern, wie z. B. Hodenkrebs, haben eine geringe Anzahl von Fällen und einen geringen Anteil von Leiden, die durch Behinderungen verursacht werden.</p>
+          <p class="w3-text-grey">Bestimmte Erkrankungen, wie Diabetes und Lebererkrankungen, betreffen Männer und Frauen in gleichem Maße, was das durch Behinderung verursachte Leiden angeht.</p>  
+        </div>
+
+        <div id="GenderHealth" class="w3-container menu w3-padding-48 w3-card">
+          <p>Das Gesundheitssystem ist in vielen Bereichen auf Männer als „Standardpatienten“ ausgerichtet.
+            Dies hat direkte Auswirkungen auf die Erkennung und Behandlung von Herzinfarkten bei Frauen:</p>
+          <h5>Medizinische Studien:</h5>
+          <p class="w3-text-grey">Viele klinische Studien, die zur Entwicklung von Medikamenten und Behandlungsansätzen
+            führen, werden überwiegend mit männlichen Probanden durchgeführt. Frauen werden oft
+            nicht ausreichend berücksichtigt, was dazu führt, dass ihre spezifischen Symptome und
+            Bedürfnisse übersehen werden.</p>
+          <p class="w3-text-grey"><i>Beispiel:</i> Ein großer Teil der Herzmedikamente wurde
+            basierend auf Studien mit männlichen Teilnehmern entwickelt, wodurch Frauen weniger
+            optimal behandelt werden.</p>
+          <h5>Diagnostische Vorurteile:</h5>
+          <p class="w3-text-grey">Ärzt*innen sind oft auf die klassischen Herzinfarkt-Symptome (Brustschmerzen, Atemnot)
+            geschult, die bei Männern häufiger auftreten. Die subtileren Symptome bei Frauen werden
+            seltener als Herzinfarkt erkannt.</p>
+          <p class="w3-text-grey"><i>Beispiel:</i> Eine Frau mit Übelkeit und Rückenschmerzen
+            wird oft auf Stress oder Verdauungsprobleme hin behandelt, obwohl sie einen Herzinfarkt
+            erleidet.</p><br>
+          <h5>Am Beispiel Asthma:</h5>
+          <p class="w3-text-grey">Die Überwindung der geschlechtsspezifischen Unterschiede kann tiefgreifende Auswirkungen auf die Akzeptanz und Wirksamkeit von Behandlungen bei Frauen haben. So ist beispielsweise Asthma bei Frauen häufiger anzutreffen, doch sind die Wirksamkeit der Behandlungen und die Therapietreue bei ihnen geringer. Inhalative Kortikosteroide (ICS)/langwirksame Beta-Agonisten (LABA) zeigen beispielsweise bei Frauen eine um etwa 40 Prozent geringere Wirksamkeit, und die Adoptionsraten sind nur halb so hoch wie bei Männern, was teilweise auf hormonelle Schwankungen und Zugangsbarrieren zurückzuführen ist. Die Verwirklichung der Geschlechterparität bei der Asthmabehandlung könnte die Zahl der effektiv behandelten Frauen um 27 bis 35 Prozent erhöhen, was zusätzlichen 16 Millionen Patientinnen zugute käme und etwa 1,6 Millionen behinderungsbedingte Lebensjahre (DALYs) verhindern würde.</p>
+          <img src="SVGZ-Womens-health_Ex2-v2.svg">
+        </div>
+
+        <div id="Gesellschaft" class="w3-container menu w3-padding-48 w3-card">
+          <h5>Vorurteile und Klischees:</h5>
+          <p class="w3-text-grey">Herzinfarkte werden in der öffentlichen Wahrnehmung oft als „Männerkrankheit“
+            dargestellt. Dies führt dazu, dass Frauen ihre eigenen Symptome weniger ernst nehmen und
+            später medizinische Hilfe suchen.</p>
+          <p class="w3-text-grey"><i>Beispiel:</i> Eine Umfrage der Deutschen Herzstiftung ergab,
+            dass viele Frauen ihre Symptome erst als ernsthaft einstufen, wenn sie unerträglich werden.</p>
+
+          <h5>Stress und Mehrfachbelastung:</h5>
+          <p class="w3-text-grey">Frauen sind oft stärker von Stress und Mehrfachbelastung betroffen (z. B. durch die
+            Doppelbelastung von Beruf und Familie). Stress kann bei Frauen Herzinfarkt-Symptome wie
+            Müdigkeit und Übelkeit verstärken, was die Diagnose zusätzlich erschwert.</p>
+
+          <h5>Gender Pay Gap</h5>
+          <p class="w3-text-grey">Der Gender Pay Gap beschreibt den Verdienstabstand pro Stunde zwischen Frauen und Männern. Die Ursachen hierfür können unterschiedlich aussehen: Frauen arbeiten beispielsweise in schlechter bezahlten Berufen oder erreichen seltener Führungspositionen als Männer. Einige Frauen erhalten auch dann von ihrem Arbeitgeber weniger, wenn Tätigkeit, Bildungsweg und Erwerbsbiografie vergleichbar mit denen der männlichen Kollegen sind.</p>
+          <img src="bruttostundenverdienste.svg">
+        </div>
+
+        <div id="Lobby" class="w3-container menu w3-padding-48 w3-card">
+          <p>Frauenherzen haben in der Politik und im öffentlichen Bewusstsein oft keine starke Lobby:</p>
+          <h5>Fokus auf männliche Erkrankungen:</h5>
+          <p class="w3-text-grey"> Gesundheitskampagnen und Forschung konzentrieren sich oft stärker auf Erkrankungen, die
+            Männer betreffen. Die spezifischen Bedürfnisse von Frauen, wie die Erkennung subtiler
+            Symptome, bleiben dabei häufig auf der Strecke.</p>
+          <h5>Ungleiche Verteilung von Forschungsgeldern:</h5>
+          <p class="w3-text-grey"> Studien zeigen, dass geschlechterspezifische Forschung (z. B. zu den Unterschieden bei
+            Herz-Kreislauf-Erkrankungen) unterfinanziert ist.</p>
+        </div>
+
+        <div id="PinkTaxes" class="w3-container menu w3-padding-48 w3-card">
+          <h5>Pink Taxes:</h5>
+          <p class="w3-text-grey"> Frauenprodukte (wie Hygieneartikel oder Pflegeprodukte) sind oft teurer, was indirekt ihre
+            finanzielle Belastung erhöht. Dies kann Auswirkungen auf die Gesundheitsvorsorge
+            haben.</p>
+          <p class="w3-text-grey"><i>Beispiel:</i> Frauen verzichten häufiger auf Vorsorgeuntersuchungen oder medizinische
+            Behandlungen, wenn sie finanziell belastet sind.</p>
+          <h5>Einkommensunterschiede:</h5>
+          <p class="w3-text-grey"> Da Frauen im Durchschnitt weniger verdienen als Männer, kann es ihnen schwerer fallen,
+            teure medizinische Behandlungen oder Vorsorgeuntersuchungen in Anspruch zu nehmen.</p>
+        </div>
+
+        <div id="Data" class="w3-container menu w3-padding-48 w3-card">
+          <h5>Fehlende geschlechtsspezifische Daten:</h5>
+          <p class="w3-text-grey"> Von den 193 Ländern, die sich zur Agenda 2030 der UN verpflichtet haben, verfügt kein einziges Land über alle Daten zu geschlechtsspezifischen Indikatoren für die Ziele für nachhaltige Entwicklung (Sustainable Development Goals: SDG). Wenn wir die durchschnittliche jährliche Steigerungsrate von 3 Prozentpunkten beibehalten, wird es 22 Jahre dauern, bis die Länder alle geschlechtsspezifischen SDG-Daten zur Verfügung gestellt haben - mehr als ein Jahrzehnt nach Ablauf der Frist für die SDGs bis 2030.</p>
+          <h5>Verfügbarkeit geschlechtsspezifischer SDG-Daten, Juni 2022</h5>
+          <div class="infogram-embed" data-id="_/MwpJaeV9Bxl9CSbeWxzF" data-type="interactive" data-title="SDG gender data availability, June 2022">
+          </div>
+          <script>!function(e,n,i,s){var d="InfogramEmbeds";var o=e.getElementsByTagName(n)[0];if(window[d]&&window[d].initialized)window[d].process&&window[d].process();else if(!e.getElementById(i)){var r=e.createElement(n);r.async=1,r.id=i,r.src=s,o.parentNode.insertBefore(r,o)}}(document,"script","infogram-async","https://e.infogram.com/js/dist/embed-loader-min.js");</script>
+          </div>
+      </div>
+    </div>
+
+  <div class="w3-grayscale w3-sand w3-large">
+    <div class="w3-container" id="about">
+      <div class="w3-content" style="max-width:700px">
+        <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Wieso ist die Diskussion auch für Dich wichtig?</span></h5>
+        <p>Es sind nicht nur Frauen benachteiligt, sondern auch Männer:</p>
+        <div class="responsive-iframe">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/JHwUihBtFx0?start=1230&end=1390&modestbranding=1&rel=0&cc_load_policy=1"
+            title="Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="w3-panel w3-leftbar w3-light-grey"></div>
+        <p><i>Männer sind benachteiligt, wenn es um die Diagnose und Therapie von Krankheiten geht, die eher als frauentypische Erkrankungen angesehen. Dies betrifft beispielsweise Depressionen, Osteoporose oder Brustkrebs.</i></p>
+        <p>Prof.Dr.med. Sandra Eifert (Herzzentrum Leipzig)</p>
+      </div>
+
+      <div class="w3-container w3-white">
+        <div class="w3-content" style="max-width:700px">
+          <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Erweiterte Perspektive: Beyond Binary</span></h5>
+          <p><strong>Das Gesundheitssystem muss inklusiver werden!</strong></p>
+          <p>Die binäre Geschlechterperspektive greift zu kurz. Eine wirklich inklusive Gesundheitsversorgung
+            muss die Vielfalt der Geschlechter berücksichtigen und trans sowie nicht-binäre Menschen
+            einbeziehen:</p>
+          <ul>
+            <li><strong>Geschlechterinklusive Forschung:</strong> Studien müssen spezifische Daten über die
+              gesundheitlichen Bedürfnisse aller Geschlechter liefern.</li>
+            <li><strong>Sensibilisierung in der medizinischen Ausbildung:</strong> Ärzt*innen und Pflegepersonal
+              müssen geschult werden, um trans und nicht-binäre Menschen kompetent und respektvoll zu
+              behandeln.</li>
+            <li><strong>Anpassung der Diagnostik:</strong>Medizinische Geräte und Diagnosen müssen
+              geschlechtsneutral gestaltet werden, um allen Patient*innen gerecht zu werden.</li>
+          </ul>
+          <p><strong>Intersektionale Perspektive:</strong></p>
+          <p>Es ist wichtig, über Geschlechtervielfalt hinaus auch andere Faktoren zu berücksichtigen, die die
+            medizinische Versorgung beeinflussen, wie Rassismus, sozioökonomische Ungleichheit oder
+            Sprachbarrieren. Menschen, die mehreren marginalisierten Gruppen angehören – z. B. Transpersonen aus
+            ethnischen Minderheiten – erleben oft noch stärkere Benachteiligung im Gesundheitssystem.</p>
+        </div>
+      </div>
+
+      <div class="w3-content" style="max-width:700px">
+        <div class="w3-panel w3-leftbar w3-red">
+          <p>Herzgesundheit ist ein Menschenrecht. Gemeinsam können wir dafür sorgen, dass niemand
+            zurückgelassen wird – unabhängig davon, ob Sie Mann, Frau, trans, nicht-binär oder divers
+            sind. Denn echte Gleichheit beginnt damit, dass wir die Unterschiede erkennen und handeln.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-dark-grey w3-grayscale w3-large">
+    <div class="w3-container" id="menu2">
+      <div class="w3-content" style="max-width:700px">
+
+        <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Weitere Informationen</span></h5>
+        <p>Diese Quellen wurden zur Erstellung der Website verwendet:</p>
+        <div class="csl-bib-body" style="line-height: 1.35; margin-left: 2em; text-indent:-2em;">
+          <div class="csl-entry">Ärzteblatt, Deutscher Ärzteverlag GmbH, Redaktion Deutsches. „Deutsches Ärzteblatt: Aktuelles aus Gesundheitspolitik und Medizin“. Deutsches Ärzteblatt. Zugegriffen 26. Januar 2025. <a href="https://www.aerzteblatt.de/">https://www.aerzteblatt.de/</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Deutsches%20%C3%84rzteblatt%3A%20Aktuelles%20aus%20Gesundheitspolitik%20und%20Medizin&amp;rft.description=Aktuelles%20aus%20der%20Gesundheitspolitik%2C%20neueste%20Studien%20aus%20der%20medizinischen%20Forschung%2C%20Nachrichten%20aus%20der%20%C3%A4rztlichen%20Berufspolitik%20und%20den%20Hochschulen&amp;rft.identifier=https%3A%2F%2Fwww.aerzteblatt.de%2F&amp;rft.aufirst=Deutscher%20%C3%84rzteverlag%20GmbH%2C%20Redaktion%20Deutsches&amp;rft.aulast=%C3%84rzteblatt&amp;rft.au=Deutscher%20%C3%84rzteverlag%20GmbH%2C%20Redaktion%20Deutsches%20%C3%84rzteblatt&amp;rft.language=de"></span>
+          <div class="csl-entry">„Closing the women’s health gap | McKinsey“. Zugegriffen 26. Januar 2025. <a href="https://www.mckinsey.com/mhi/our-insights/closing-the-womens-health-gap-a-1-trillion-dollar-opportunity-to-improve-lives-and-economies">https://www.mckinsey.com/mhi/our-insights/closing-the-womens-health-gap-a-1-trillion-dollar-opportunity-to-improve-lives-and-economies</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Closing%20the%20women%E2%80%99s%20health%20gap%20%7C%20McKinsey&amp;rft.identifier=https%3A%2F%2Fwww.mckinsey.com%2Fmhi%2Four-insights%2Fclosing-the-womens-health-gap-a-1-trillion-dollar-opportunity-to-improve-lives-and-economies"></span>
+          <div class="csl-entry">„Closing the women’s health gap: Biopharma’s untapped opportunity | McKinsey“. Zugegriffen 26. Januar 2025. <a href="https://www.mckinsey.com/industries/life-sciences/our-insights/closing-the-womens-health-gap-biopharmas-untapped-opportunity">https://www.mckinsey.com/industries/life-sciences/our-insights/closing-the-womens-health-gap-biopharmas-untapped-opportunity</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Closing%20the%20women%E2%80%99s%20health%20gap%3A%20Biopharma%E2%80%99s%20untapped%20opportunity%20%7C%20McKinsey&amp;rft.identifier=https%3A%2F%2Fwww.mckinsey.com%2Findustries%2Flife-sciences%2Four-insights%2Fclosing-the-womens-health-gap-biopharmas-untapped-opportunity"></span>
+          <div class="csl-entry">Deutsche Herzstiftung e.V. „Deutsche Herzstiftung e.V.“ Zugegriffen 26. Januar 2025. <a href="https://www.herzstiftung.de">https://www.herzstiftung.de</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Deutsche%20Herzstiftung%20e.V.&amp;rft.description=Die%20Deutsche%20Herzstiftung%20ist%20die%20gr%C3%B6%C3%9Fte%2C%20gemeinn%C3%BCtzige%20und%20unabh%C3%A4ngige%20Anlaufstelle%20f%C3%BCr%20Patienten%20und%20Interessierte%20im%20Bereich%20der%20Herzerkrankungen.&amp;rft.identifier=https%3A%2F%2Fwww.herzstiftung.de&amp;rft.language=de"></span>
+          <div class="csl-entry">„Fehldiagnose statt Therapie · Warum Geschlechterklischees in der Medizin gefährlich sind | MDR DOK - YouTube“. Zugegriffen 26. Januar 2025. <a href="https://www.youtube.com/watch?v=JHwUihBtFx0">https://www.youtube.com/watch?v=JHwUihBtFx0</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Fehldiagnose%20statt%20Therapie%20%C2%B7%20Warum%20Geschlechterklischees%20in%20der%20Medizin%20gef%C3%A4hrlich%20sind%20%7C%20MDR%20DOK%20-%20YouTube&amp;rft.identifier=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DJHwUihBtFx0"></span>
+          <div class="csl-entry">„Herzmedizin.de – Das Portal für Kardiologie &amp; Herzgesundheit“. Zugegriffen 26. Januar 2025. <a href="https://herzmedizin.de.html">https://herzmedizin.de.html</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Herzmedizin.de%20%E2%80%93%20Das%20Portal%20f%C3%BCr%20Kardiologie%20%26%20Herzgesundheit&amp;rft.description=Herzmedizin.de%20bietet%20Informationen%20zu%20Kardiologie%20und%20Herzgesundheit%20f%C3%BCr%20Mediziner%2C%20Wissenschaftler%2C%20Patienten%20und%20Interessierte.&amp;rft.identifier=https%3A%2F%2Fherzmedizin.de.html&amp;rft.language=de"></span>
+          <div class="csl-entry">„Herzmedizin.de – Das Portal für Kardiologie &amp; Herzgesundheit“. Zugegriffen 26. Januar 2025. <a href="https://herzmedizin.de/">https://herzmedizin.de/</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Herzmedizin.de%20%E2%80%93%20Das%20Portal%20f%C3%BCr%20Kardiologie%20%26%20Herzgesundheit&amp;rft.identifier=https%3A%2F%2Fherzmedizin.de%2F"></span>
+          <div class="csl-entry">Instagram. „Quarks auf Instagram“, 11. August 2024. <a href="https://www.instagram.com/reel/C-g_2dLIwdN/">https://www.instagram.com/reel/C-g_2dLIwdN/</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Quarks%20auf%20Instagram%3A%20%22%E2%9D%93%20Habt%20ihr%20euch%20medizinisch%20schon%20mal%20falsch%20behandelt%20gef%C3%BChlt%2C%20weil%20ihr%20eine%20Frau%20seid%3F%20.%20%F0%9F%91%AB%20Viele%20allt%C3%A4gliche%20Medikamente%20wurden%20ausschlie%C3%9Flich%20an%20M%C3%A4nnern%20getestet.%20Auch%20heute%20schaut%20die%20Forschung%20noch%20nicht%20immer%20oder%20zu%20wenig%20darauf%2C%20wie%20anders%20Medikamente%20bei%20Frauen%20wirken%20k%C3%B6nnen.%20Dazu%20kommt%3A%20Manche%20Erkrankungen%20wie%20Endometriose%20oder%20die%20Folgen%20einer%20Geb%C3%A4rmutterentfernung%20sind%20wenig%20erforscht.%20Diese%20Datenl%C3%BCcke%20wird%20als%20Gender-Data-Gap%20bezeichnet%20oder%20in%20der%20Medizin%20als%20Gender-Health-Gap.%20.%20%F0%9F%91%A9%E2%80%8D%E2%9A%95%EF%B8%8F%F0%9F%91%A8%E2%80%8D%E2%9A%95%EF%B8%8F%20Das%20Problem%3A%20Zwar%20ist%20mittlerweile%20vorgeschrieben%2C%20dass%20klinische%20Studien%20auch%20Frauen%20ber%C3%BCcksichtigen%20m%C3%BCssen.%20Das%20bedeutet%20aber%20nicht%2C%20dass%20geschlechtsspezifische%20Wirkungen%20von%20Medikamenten%20auch%20ausgewertet%20werden.%20Das%20kann%20auch%20f%C3%BCr%20M%C3%A4nner%20zum%20Problem%20werden%3A%20Sind%20in%20Studien%20zu%20eher%20weiblichen%20Erkrankungen%20kaum%20M%C3%A4nner%20beteiligt%2C%20k%C3%B6nnte%20beispielsweise%20die%20Dosierung%20f%C3%BCr%20sie%20zu%20gering%20ausfallen%20und%20das%20Medikament%20bleibt%20ohne%20Wirkung.%20.%20Unsere%20Quellen%20u.a.%3A%20Harris%2C%20David%20J.%20et%20al.%3A%20Enrollment%20of%20Women%20in%20Cardiovascular%20Clinical%20Trials%20Funded%20by%20the%20National%20Heart%2C%20Lung%2C%20and%20Blood%20Institute%20(New%20England%20Journal%20of%20Medicine%2C%202000)%20Mazure%2C%20Carolyn%20M.%20%26%20Jones%2C%20Daniel%20P.%3A%20Twenty%20years%20and%20still%20counting%3A%20including%20women%20as%20participants%20and%20studying%20sex%20and%20gender%20in%20biomedical%20research%20(BMC%20Women%E2%80%99s%20Health%2C%202015)%20Merkatz%2C%20Ruth%20B.%20et%20al.%3A%20Women%20in%20Clinical%20Trials%20of%20New%20Drugs%20-%20A%20Change%20in%20Food%20and%20Drug%20Administration%20Policy%20(New%20England%20Journal%20of%20Medicine%2C%201993)%20Closing%20the%20Women%E2%80%99s%20Health%20Gap%3A%20A%20%241%20Trillion%20Opportunity%20to%20Improve%20Lives%20and%20Economies%20Insight%20Report%202024%20(World%20Economic%20Forum%2C%202024)%20Ngo%2C%20Shyuan%20T.%20et%20al.%3A%20Gender%20differences%20in%20autoimmune%20disease%20(Frontiers%20in%20Neuroendocrinology%2C%202014)%20Europ%C3%A4ische%20Regelung%3A%20Gleichstellung%20der%20Geschlechter%20in%20Gesundheit%20und%20klinischer%20Forschung%20(Europ%C3%A4isches%20Parlament%2C%202017)%20.%20.%20.%20%23quarks%20%23genderdatagap%20%23gender%20%23genderhealthgap%20%23gendermedizin%20%23frauengesundheit%20%23empowering%20%23healthy%22&amp;rft.description=31K%20likes%2C%20790%20comments%20-%20quarks.de%20am%20August%2010%2C%202024%3A%20%22%E2%9D%93%20Habt%20ihr%20euch%20medizinisch%20schon%20mal%20falsch%20behandelt%20gef%C3%BChlt%2C%20weil%20ihr%20eine%20Frau%20seid%3F%0A.%0A%F0%9F%91%AB%20Viele%20allt%C3%A4gliche%20Medikamente%20wurden%20ausschlie%C3%9Flich%20an%20M%C3%A4nnern%20getestet.%20Auch%20heute%20schaut%20die%20Forschung%20noch%20nicht%20immer%20oder%20zu%20wenig%20darauf%2C%20wie%20anders%20Medikamente%20bei%20Frauen%20wirken%20k%C3%B6nnen.%20Dazu%20kommt%3A%20Manche%20Erkrankungen%20wie%20Endometriose%20oder%20die%20Folgen%20einer%20Geb%C3%A4rmutterentfernung%20sind%20wenig%20erforscht.%20Diese%20Datenl%C3%BCcke%20wird%20als%20Gender-Data-Gap%20bezeichnet%20oder%20in%20der%20Medizin%20als%20Gender-Health-Gap.%20%0A.%0A%F0%9F%91%A9%E2%80%8D%E2%9A%95%EF%B8%8F%F0%9F%91%A8%E2%80%8D%E2%9A%95%EF%B8%8F%20Das%20Problem%3A%20Zwar%20ist%20mittlerweile%20vorgeschrieben%2C%20dass%20klinische%20Studien%20auch%20Frauen%20ber%C3%BCcksichtigen%20m%C3%BCssen.%20Das%20bedeutet%20aber%20nicht%2C%20dass%20geschlechtsspezifische%20Wirkungen%20von%20Medikamenten%20auch%20ausgewertet%20werden.%20Das%20kann%20auch%20f%C3%BCr%20M%C3%A4nner%20zum%20Problem%20werden%3A%20Sind%20in%20Studien%20zu%20eher%20weiblichen%20Erkrankungen%20kaum%20M%C3%A4nner%20beteiligt%2C%20k%C3%B6nnte%20beispielsweise%20die%20Dosierung%20f%C3%BCr%20sie%20zu%20gering%20ausfallen%20und%20das%20Medikament%20bleibt%20ohne%20Wirkung.%0A.%0AUnsere%20Quellen%20u.a.%3A%20%0AHarris%2C%20David%20J.%20et%20al.%3A%20Enrollment%20of%20Women%20in%20Cardiovascular%20Clinical%20Trials%20Funded%20by%20the%20National%20Heart%2C%20Lung%2C%20and%20Blood%20Institute%20(New%20England%20Journal%20of%20Medicine%2C%202000)%0AMazure%2C%20Carolyn%20M.%20%26%20Jones%2C%20Daniel%20P.%3A%20Twenty%20years%20and%20still%20counting%3A%20including%20women%20as%20participants%20and%20studying%20sex%20and%20gender%20in%20biomedical%20research%20(BMC%20Women%E2%80%99s%20Health%2C%202015)%0AMerkatz%2C%20Ruth%20B.%20et%20al.%3A%20Women%20in%20Clinical%20Trials%20of%20New%20Drugs%20-%20A%20Change%20in%20Food%20and%20Drug%20Administration%20Policy%20(New%20England%20Journal%20of%20Medicine%2C%201993)%0AClosing%20the%20Women%E2%80%99s%20Health%20Gap%3A%20A%20%241%20Trillion%20Opportunity%20to%20Improve%20Lives%20and%20Economies%0AInsight%20Report%202024%20(World%20Economic%20Forum%2C%202024)%0ANgo%2C%20Shyuan%20T.%20et%20al.%3A%20Gender%20differences%20in%20autoimmune%20disease%20(Frontiers%20in%20Neuroendocrinology%2C%202014)%0AEurop%C3%A4ische%20Regelung%3A%20Gleichstellung%20der%20Geschlechter%20in%20Gesundheit%20und%20klinischer%20Forschung%20(Europ%C3%A4isches%20Parlament%2C%202017)%0A.%0A.%0A.%0A%23quarks%20%23genderdatagap%20%23gender%20%23genderhealthgap%20%23gendermedizin%20%23frauengesundheit%20%23empowering%20%23healthy%22.&amp;rft.identifier=https%3A%2F%2Fwww.instagram.com%2Freel%2FC-g_2dLIwdN%2F&amp;rft.date=2024-08-11&amp;rft.language=de"></span>
+          <div class="csl-entry">Statistisches Bundesamt. „Gender Pay Gap“. Zugegriffen 26. Januar 2025. <a href="https://www.destatis.de/DE/Themen/Arbeit/Verdienste/Verdienste-GenderPayGap/_inhalt.html">https://www.destatis.de/DE/Themen/Arbeit/Verdienste/Verdienste-GenderPayGap/_inhalt.html</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Gender%20Pay%20Gap&amp;rft.description=Verdienstunterschiede%20zwischen%20Frauen%20und%20M%C3%A4nnern%20-%20%20Gender%20Pay%20Gap&amp;rft.identifier=https%3A%2F%2Fwww.destatis.de%2FDE%2FThemen%2FArbeit%2FVerdienste%2FVerdienste-GenderPayGap%2F_inhalt.html&amp;rft.language=de"></span>
+          <div class="csl-entry">UN Women Data Hub. „It Will Take 22 Years to Close SDG Gender Data Gaps“, 6. September 2022. <a href="https://data.unwomen.org/features/it-will-take-22-years-close-sdg-gender-data-gaps">https://data.unwomen.org/features/it-will-take-22-years-close-sdg-gender-data-gaps</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=It%20will%20take%2022%20years%20to%20close%20SDG%20gender%20data%20gaps&amp;rft.identifier=https%3A%2F%2Fdata.unwomen.org%2Ffeatures%2Fit-will-take-22-years-close-sdg-gender-data-gaps&amp;rft.date=2022-09-06&amp;rft.language=en"></span>
+          <div class="csl-entry">„Unlocking opportunities in women’s healthcare | McKinsey“. Zugegriffen 26. Januar 2025. <a href="https://www.mckinsey.com/industries/healthcare/our-insights/unlocking-opportunities-in-womens-healthcare">https://www.mckinsey.com/industries/healthcare/our-insights/unlocking-opportunities-in-womens-healthcare</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Unlocking%20opportunities%20in%20women%E2%80%99s%20healthcare%20%7C%20McKinsey&amp;rft.identifier=https%3A%2F%2Fwww.mckinsey.com%2Findustries%2Fhealthcare%2Four-insights%2Funlocking-opportunities-in-womens-healthcare"></span>
+          <div class="csl-entry">„Was ist Gendermedizin?“ Zugegriffen 26. Januar 2025. <a href="https://www.helios-gesundheit.de/magazin/news/02/gendermedizin/">https://www.helios-gesundheit.de/magazin/news/02/gendermedizin/</a>.</div>
+          <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fzotero.org%3A2&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft.type=webpage&amp;rft.title=Was%20ist%20Gendermedizin%3F&amp;rft.description=Gendermedizin%20ist%20geschlechtersensible%20Medizin.%20Einige%20Krankheiten%20zeigen%20sich%20bei%20Frauen%20und%20M%C3%A4nnern%20unterschiedlich.%20Erfahren%20Sie%20hier%20mehr.&amp;rft.identifier=https%3A%2F%2Fwww.helios-gesundheit.de%2Fmagazin%2Fnews%2F02%2Fgendermedizin%2F&amp;rft.language=de"></span>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!-- End page content -->
+
+
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <p>Erarbeitet im Seminar
+      <i>"Dir zeig ich's!" - Datenvisualisierung in Zeiten der Polarisierung</i>
+      an der Otto-Friedrich-Universität Bamberg, Wintersemester 2024/25
+    </p>
+  </footer>
+
+  <script>
+    // Tabbed Menu
+    function openMenu(evt, menuName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("menu");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+      }
+      document.getElementById(menuName).style.display = "block";
+      evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+    }
+    document.getElementById("myLink").click();
+  </script>
+
+  <script>
+    // Add scroll event listener
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY; // Distance scrolled from the top
+      const docHeight = document.documentElement.scrollHeight; // Total height of the document
+      const winHeight = window.innerHeight; // Visible height of the viewport
+      const scrollPercent = scrollTop / (docHeight - winHeight); // Scroll percentage (0 to 1)
+
+      // Calculate foam height (shrink the foam as you scroll)
+      const foamHeight = Math.max(0, 15 - (scrollPercent * 15)); // Foam disappears first
+
+      // Calculate liquid height (inverse of scroll percentage)
+      const liquidHeight = Math.max(0, 100 - (scrollPercent * 100)); // Liquid decreases with scroll
+
+      // Update beer liquid's height dynamically
+      document.querySelector(".beer-liquid").style.height = `${liquidHeight}%`; // Ensure no negative heights
+
+      // Update foam height and opacity dynamically (foam sinks with the liquid)
+      document.querySelector(".beer-foam").style.height = `${foamHeight}%`;
+      document.querySelector(".beer-foam").style.opacity = foamHeight / 15; // Gradually fade the foam
+    });
+    </script>
+    
+    <script>
+    var scrollContainer = document.querySelector('.scrollbar-indicator');
+    var scrollbar = scrollContainer.querySelector('.scrollbar');
+
+    function scrollPercent() {
+      return ((window.scrollY) / (document.body.scrollHeight - window.innerHeight) * 100 );
+    }
+
+    function updateProgressBar() {
+      scrollbar.style.width = scrollPercent() + '%';
+      requestAnimationFrame(updateProgressBar);
+    }
+
+    updateProgressBar();
+
+  </script>
+
+</body>
+</html>
