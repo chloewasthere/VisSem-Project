@@ -15,10 +15,10 @@
   }
 
   .centered {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-45%, -50%);
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-45%, -50%);
   }
 
   .bgimg {
@@ -30,8 +30,8 @@
 
   .img {
   object-fit: contain;
-  } 
-    
+  }
+
     /* Beer glass container (fixed position at bottom left) */
     .beer-container {
       position: fixed;
@@ -88,6 +88,10 @@
       z-index: 2;
     }
 
+   .img-fluid{
+      height: auto;
+      width: 100%;
+   }
 
   .video-player {
       display: block;
@@ -106,7 +110,7 @@
       padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
       padding-top: 25px;
       height: 0;
-      weight: 100%;
+      width: 100%;
     }
     .responsive-iframe iframe {
     position: absolute;
@@ -155,7 +159,8 @@
       <div class="w3-content" style="max-width:700px">
         <h6 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">Das Problem?</span></h6>
         <p>Die medizinische Forschung und auch die öffentliche Wahrnehmung orientieren sich noch immer hauptsächlich an den Symptomen, die bei Männern auftreten. Frauenherzen bleiben häufig unbeachtet – mit lebensbedrohlichen Folgen.</p>
-        <img src="Wiederbelebung_gekürzt.jpg">
+        <img class="img-fluid"
+                src="Wiederbelebung_gekürzt.jpg">
         <h6 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Warum betrifft Dich das?</span></h6>
         <p>Ein Herzinfarkt kann uns alle treffen – Männer, Frauen und auch Menschen, die sich außerhalb der binären Geschlechterordnung bewegen. Doch die Frage ist: Erkennst Du die Anzeichen rechtzeitig, um dir selbst oder jemand anderem zu helfen?</p>
       </div>
@@ -211,7 +216,8 @@
             Müdigkeit.</p>
           <br>
           <p>Frauen sind häufig mit Erkrankungen konfrontiert, die zwar nicht tödlich sind, aber zu Behinderungen führen und ihre Lebensqualität beeinträchtigen können. </p>
-          <img src="svgz-mhiwomenhealth-ex-9-A.svg" class="">
+          <img class="img-fluid"
+               src="svgz-mhiwomenhealth-ex-9-A.svg" class="">
           <p class="w3-text-white" style="background-color: blue;">Einige Krankheiten, wie Darm- oder Leberkrebs, betreffen Männer und Frauen unterschiedlich, und im Durchschnitt ist die Wahrscheinlichkeit, dass Frauen eine schwerere oder schwerere Form dieser Krankheiten entwickeln, größer.</p>
           <p style="background-color: aqua;">Bestimmte Krankheiten wie Alzheimer und andere Demenzerkrankungen betreffen Frauen überproportional häufig.</p>
           <p class="w3-text-white"style="background-color: rgb(42, 115, 198);">Bestimmte frauenspezifische Erkrankungen wie Eierstockkrebs verursachen weniger Behinderungen, weil die Sterblichkeitsrate höher ist. Eierstockkrebs ist die tödlichste gynäkologische Krebsart mit einer relativen Fünf-Jahres-Überlebensrate von 17 Prozent für eine Patientin, die in einem fortgeschrittenen Stadium diagnostiziert wird.</p>
@@ -239,7 +245,8 @@
             erleidet.</p><br>
           <h5>Am Beispiel Asthma:</h5>
           <p class="w3-text-grey">Unterschiede zwischen den Geschlechtern können die Wirkung von Behandlungen bei Frauen beeinflussen.Asthma zum Beispiel tritt bei Frauen häufiger auf, aber die Behandlung und die Therapietreue sind geringer. Inhalative Kortikosteroide (ICS)/langwirksame Beta-Agonisten (LABA) wirken bei Frauen etwa 40 Prozent schwächer und werden nur halb so oft verwendet wie bei Männern. Ein Grund dafür sind hormonelle Schwankungen und Zugangsbarrieren. Wenn Männer und Frauen bei der Asthmabehandlung gleich behandelt werden, könnten 27 bis 35 Prozent mehr Frauen die Behandlung erfolgreich erhalten. Das wäre gut für etwa 16 Millionen Patientinnen und würde etwa 1,6 Millionen behinderungsbedingte Lebensjahre (DALYs) verhindern.</p> 
-          <img src="SVGZ-Womens-health_Ex2-v2.svg">
+          <img class="img-fluid"
+                  src="SVGZ-Womens-health_Ex2-v2.svg">
         </div>
 
         <div id="Gesellschaft" class="w3-container menu w3-padding-48 w3-card">
@@ -257,7 +264,8 @@
 
           <h5>Gender Pay Gap</h5>
           <p class="w3-text-grey">Der Gender Pay Gap beschreibt den Verdienstabstand pro Stunde zwischen Frauen und Männern. Die Ursachen hierfür können unterschiedlich aussehen: Frauen arbeiten beispielsweise in schlechter bezahlten Berufen oder erreichen seltener Führungspositionen als Männer. Einige Frauen erhalten auch dann von ihrem Arbeitgeber weniger, wenn Tätigkeit, Bildungsweg und Erwerbsbiografie vergleichbar mit denen der männlichen Kollegen sind.</p>
-          <img src="bruttostundenverdienste.svg">
+          <img class= "img-fluid"
+               src="bruttostundenverdienste.svg">
         </div>
 
         <div id="Lobby" class="w3-container menu w3-padding-48 w3-card">
